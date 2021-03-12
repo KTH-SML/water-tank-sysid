@@ -15,17 +15,6 @@ function SysidProcessPrepare(app)
 
     %% --- CONSTRUCTOR: CONTROLLER --- %
     app.REC=ControllerREC(max_vol);
-%     control_P   = app.KEditField.Value;
-%     control_I   = app.TiEditField.Value;
-%     control_D   = app.TdEditField.Value;
-%     app.PID=ControllerPID(control_P,control_I,control_D,Ts,max_vol);
-%     switch app.AntiWindUpSwitch.Value
-%         case 'On'
-%             app.PID.AntiWindUp_flag = true;
-%         case 'Off'
-%             app.PID.AntiWindUp_flag = false;
-%     end
-    
     app.Manual=ControllerManual(max_vol);
     
     switch app.ManualRECSwitch.Value

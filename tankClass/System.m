@@ -58,7 +58,7 @@ classdef System < handle
                 obj.History(end,5:7)=NaN(1,3);
             end
             
-            % --- tankChoice SIGANL OUTPUT --- %
+            % --- tankChoice SIGNAL OUTPUT --- %
             data=obj.state(1,obj.tankChoice);
         end
         

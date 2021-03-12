@@ -11,11 +11,11 @@ function sysidMainLoop(~,thisEvent,app)
     
     % --- SYSID IS DONE CHECK --- %
     tankFcn.RECIsDone(app);
-
+    
     % --- DATA WRITTING --- %
     app.system.WriteData(control_signal);
     
     % --- PLOT UPDATING -- %
-    tankFcn.PlotUpdate(app);
+    tankFcn.SysidPlotUpdate(app);
 % toc
 end

@@ -33,4 +33,14 @@ function REC_mode(app, is_running)
     app.TankSwitch.Value = 'Tank2';
     app.HW.tankChoice=2;
     app.SW.tankChoice=2;
+    
+    %% PLOT PANEL
+    app.RunpercentageGauge.Enable = 'On';
+    app.TimeLeftEditField.Enable = 'On';
+    app.EstimatedfinishEditField.Enable = 'On';
+    if ~is_running
+        app.TimeLeftEditField.Value = '00:00:00';
+        app.EstimatedfinishEditField.Value = '00:00:00';
+        app.RunpercentageGauge.Value = 0.0;
+    end
 end
