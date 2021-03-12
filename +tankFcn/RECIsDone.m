@@ -1,13 +1,7 @@
 function RECIsDone(app)
-    if app.REC.isDone
-        signal_file_path = app.SignalfileEditField.Value(1:end-4);
-        save_file_path = get_save_file_name(signal_file_path);
-        t = app.REC.timeSequence;
-        u = app.REC.controlSequence;
-        y = app.REC.sampleSequence;
-        save(save_file_path, 't', 'u', 'y');
-        app.REC.isDone = false;
+    if app.REC.wasStoped
         tankFcn.REC_mode(app, false);
+        app.REC.wasStoped = false;
     end
 end
 

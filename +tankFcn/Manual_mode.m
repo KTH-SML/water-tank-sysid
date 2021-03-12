@@ -16,4 +16,8 @@ function Manual_mode(app)
     
     %% TANK SWITCH
     app.TankSwitch.Enable = 'Off';
+    app.RunpercentageGauge.Enable = 'Off';
+    app.TimeLeftEditField.Enable = 'Off';
+    app.EstimatedfinishEditField.Enable = 'Off';
+    app.StatusLamp.Enable = 'Off';
 end

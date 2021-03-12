@@ -1,4 +1,4 @@
-function PlotUpdate(app)
+function SysidPlotUpdate(app)
     %% PREPARE
     NumSampleToPlot = app.figureOption.NumSampleToPlot;
     
@@ -19,19 +19,37 @@ function PlotUpdate(app)
     app.tank2Gauge.Value = app.system.state(1,2);
     
     %% REC Time estimates
-     if app.REC.isRunning && app.REC.sampleIndex > 0
+     if app.REC.is_ready() % app.REC.isRunning && app.REC.sampleIndex > 0
         time_total = app.REC.timeSequence(end);
-        current_ix = app.REC.sampleIndex;
         % Time left
-        time_left = time_total - app.REC.timeSequence(current_ix);
+        if app.REC.isRunning
+            time_passed = datetime - app.REC.startTime;
+            time_left = time_total - time_passed;
+        else
+            time_left = time_total;
+        end
         time_left_str = datestr(time_left, 'HH:MM:SS');
         app.TimeLeftEditField.Value = time_left_str;
-        % Estimated finish 
-        estimated_finish = app.REC.startTime + time_total;
+        % Estimated finish
+        if app.REC.isRunning
+            estimated_finish = app.REC.startTime + time_total;
+        else
+            estimated_finish = datetime + time_total;
+        end
         finish_str = string(datetime(estimated_finish,'Format','HH:mm:ss'));
         app.EstimatedfinishEditField.Value = finish_str;
         % Percentage gauge
         time_percentage = 100 - 100 * time_left/time_total;
         app.RunpercentageGauge.Value = time_percentage;
+    %% Status lamp
+        if app.REC.isRunning
+            app.StatusLamp.Color = [1.0, 0.0, 0.0]; % Red
+        elseif app.REC.isDone
+            app.StatusLamp.Color = [0.0,1.0,0.0]; % Green
+        elseif app.REC.is_ready()
+            app.StatusLamp.Color = [0.33,0.33,1.0]; % White
+        else
+            app.StatusLamp.Color = [0.65,0.65,0.65]; % Gray
+        end
     end
 end

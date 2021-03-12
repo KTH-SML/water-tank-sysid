@@ -38,6 +38,7 @@ function REC_mode(app, is_running)
     app.RunpercentageGauge.Enable = 'On';
     app.TimeLeftEditField.Enable = 'On';
     app.EstimatedfinishEditField.Enable = 'On';
+    app.StatusLamp.Enable = 'On';
     if ~is_running
         app.TimeLeftEditField.Value = '00:00:00';
         app.EstimatedfinishEditField.Value = '00:00:00';

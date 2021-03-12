@@ -15,6 +15,7 @@ function SysidProcessPrepare(app)
 
     %% --- CONSTRUCTOR: CONTROLLER --- %
     app.REC=ControllerREC(max_vol);
+    app.REC.set_sample_time(app.SamplingtimeEditField.Value);
     app.Manual=ControllerManual(max_vol);
     
     switch app.ManualRECSwitch.Value
