@@ -1,6 +1,6 @@
 function SysidProcessPrepare(app)
     % --- INITIALIZE PARAMETERS --- %
-    tankFcn.FreshPara 
+    tankFcn.SysidFreshPara 
     %% --- CONSTRUCTOR: SYSTEM --- %
     if tankFcn.HW_detect()
         app.HW=System(sysInfo, nan);

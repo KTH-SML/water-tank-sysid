@@ -63,11 +63,12 @@ classdef System < handle
         end
         
         function WriteData(obj,data)
-            if max(obj.state)> 100
-                outputSingleScan(obj.session, 0);
-            else
-                outputSingleScan(obj.session,data(1,1))
-            end
+%             if max(obj.state)> 100
+%                 outputSingleScan(obj.session, 0);
+%             else
+%                 outputSingleScan(obj.session,data(1,1))
+%             end
+            outputSingleScan(obj.session,data(1,1))
             obj.controlSignal=(100/obj.sysInfo.max_vol)*data;
             
             % --- PROCESS COUNTER UPDATING --- %
