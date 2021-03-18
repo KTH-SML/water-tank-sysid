@@ -8,9 +8,9 @@ function ProcessStop(app)
         outputSingleScan(app.system.session,0);
 
         % --- CONTROLLER STATE RESET --- %
-        app.PID.Ie=0;
-        app.PID.D_state=0;
-        app.PID.De=0;
+%         app.PID.Ie=0;
+%         app.PID.D_state=0;
+%         app.PID.De=0;
     end
 
     %% STOP TIMER

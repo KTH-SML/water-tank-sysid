@@ -177,7 +177,7 @@ function save_file_path = get_save_file_name(signal_file_path)
     file_path = strcat(signal_file_path, '_result');
     full_file_path = file_path;
     counter = 1;
-    while isfile(strcat(full_file_path, '.mat'))
+    while exist(strcat(full_file_path, '.mat'), 'file')
         full_file_path = strcat(file_path, '(', int2str(counter), ')');
         counter = counter + 1;
     end

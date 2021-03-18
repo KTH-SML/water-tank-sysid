@@ -36,7 +36,7 @@ function SysidPlotUpdate(app)
         else
             estimated_finish = datetime + time_total;
         end
-        finish_str = string(datetime(estimated_finish,'Format','HH:mm:ss'));
+        finish_str = char(datetime(estimated_finish,'Format','HH:mm:ss'));
         app.EstimatedfinishEditField.Value = finish_str;
         % Percentage gauge
         time_percentage = 100 - 100 * time_left/time_total;

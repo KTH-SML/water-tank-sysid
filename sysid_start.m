@@ -4,5 +4,5 @@ tankFcn.FreshClear;
 
 
 %% START TWO TANK LAB
-lab = two_tank_sysid_app;
+lab = two_tank_app;
 
