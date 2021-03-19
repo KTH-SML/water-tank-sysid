@@ -3,6 +3,6 @@
 tankFcn.FreshClear;
 
 
-%% START TWO TANK LAB
-lab = two_tank_app;
+%% START TWO TANK SYSID LAB
+lab = two_tank_sysid_app;
 
