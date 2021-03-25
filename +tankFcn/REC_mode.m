@@ -10,7 +10,7 @@ function REC_mode(app, is_running)
 
     %% SYSTEM SETTINGS PANEL
     app.StartStopSwitch.Enable=enable_str;
-    app.SimRealSwitch.Enable=enable_str;
+    %app.SimRealSwitch.Enable=enable_str;
     
     %% CONTROLLER SETTING PANEL
     app.InputSlider.Enable='Off';
