@@ -167,8 +167,12 @@ classdef ControllerREC < handle
             u = obj.controlSequence;
             y = obj.sampleSequence;
             save(save_file_path, 't', 'u', 'y');
-            obj.stop()
+            obj.stop();
             obj.isDone = true;
+            plot(y);
+            title(save_file_path);
+            ylabel('Value (%)');
+            xlabel('time step');
         end
     end
 end
