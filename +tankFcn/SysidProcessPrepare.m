@@ -21,10 +21,10 @@ function SysidProcessPrepare(app)
     switch app.ManualRECSwitch.Value
         case 'Manual'
             tankFcn.SysidManual_mode(app);
-            app.TankSwitch.Enable = 'Off';
+%             app.TankSwitch.Enable = 'Off';
         case 'REC'
             tankFcn.REC_mode(app, false);
-            app.TankSwitch.Enable = 'On';
+%             app.TankSwitch.Enable = 'On';
     end
 
     %% --- SPECIFICATION: plotting --- %

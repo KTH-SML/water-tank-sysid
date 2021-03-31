@@ -170,7 +170,8 @@ classdef ControllerREC < handle
             obj.stop();
             obj.isDone = true;
             plot(y);
-            title(save_file_path);
+            save_file_string = fn2str(save_file_path);
+            title(save_file_string);
             ylabel('Value (%)');
             xlabel('time step');
         end
@@ -186,4 +187,12 @@ function save_file_path = get_save_file_name(signal_file_path)
         counter = counter + 1;
     end
     save_file_path = full_file_path;
+end
+
+function fn_string = fn2str(file_path)
+    delimiter = '\';
+    file_path = strrep(file_path, '_', ' ');
+    ixs = strfind(file_path, delimiter);
+    last_delimiter = ixs(end) + 1;
+    fn_string = file_path(last_delimiter:end);
 end
